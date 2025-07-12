@@ -32,7 +32,7 @@ public class OllamaController {
     }
 
     @PostMapping("/finbuddy")
-    public String finbuddy(@RequestParam("message") String message) {
+    public String finbuddy(@RequestParam() String message) {
         return ollamaService.finbuddyPrompt(message);
     }
 }

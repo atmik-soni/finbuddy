@@ -11,7 +11,7 @@ spring:
     async:
       request-timeout: 60000  # optional, 60 seconds for long LLM responses
 ollama:
-  model: mistral
+  model: llama3.2
   api-url: http://localhost:8081/api/ollama  # Base URL for the Ollama API
   timeout: 600000  # Timeout in milliseconds for API requests
   max-retries: 3  # Number of retrie
