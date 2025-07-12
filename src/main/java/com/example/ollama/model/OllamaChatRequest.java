@@ -8,7 +8,7 @@ public class OllamaChatRequest {
     private List<Message> messages;
 
     public static class Message {
-        private String role;
+        private String role; // "user" or "assistant"
         private String content;
 
         public Message() {}

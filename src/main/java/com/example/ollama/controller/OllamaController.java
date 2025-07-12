@@ -30,4 +30,9 @@ public class OllamaController {
 
         return ollamaService.chat(messages);
     }
+
+    @PostMapping("/finbuddy")
+    public String finbuddy(@RequestParam("message") String message) {
+        return ollamaService.finbuddyPrompt(message);
+    }
 }
