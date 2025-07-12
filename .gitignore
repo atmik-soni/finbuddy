@@ -1,4 +1,1 @@
-# Exclude target folder
 /target/
-# Exclude IntelliJ IDEA project files
-target
