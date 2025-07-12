@@ -30,7 +30,11 @@ public class OllamaService {
         HttpEntity<OllamaRequest> entity = new HttpEntity<>(request, headers);
         ResponseEntity<String> response = restTemplate.postForEntity(GENERATE_URL, entity, String.class);
 
-        return response.getBody();
+        if (response.getStatusCode() == HttpStatus.OK) {
+            return response.getBody();
+        } else {
+            throw new RuntimeException("Failed to get a valid response from the backend");
+        }
     }
 
     public String chat(List<OllamaChatRequest.Message> messages) {
@@ -43,7 +47,12 @@ public class OllamaService {
         HttpEntity<OllamaChatRequest> entity = new HttpEntity<>(chatRequest, headers);
         ResponseEntity<String> response = restTemplate.postForEntity(CHAT_URL, entity, String.class);
 
-        return response.getBody();
+        // Ensure the response is returned as a single JSON object
+        if (response.getStatusCode() == HttpStatus.OK) {
+            return response.getBody();
+        } else {
+            throw new RuntimeException("Failed to get a valid response from the backend");
+        }
     }
 
     public String finbuddyPrompt(String userMessage) {

@@ -23,5 +23,6 @@ Content-Type: application/json
   }
 ]
 
-### Test /finbuddy endpoint
-POST http://localhost:8081/api/ollama/finbuddy?message="Hello"
+### Test finbuddy endpoint
+POST http://localhost:8081/api/ollama/finbuddy?message=%22Hello%22
+Content-Type: application/json
