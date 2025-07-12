@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.example.ollama: DEBUG
+
+spring:
+  mvc:
+    async:
+      request-timeout: 60000  # optional, 60 seconds for long LLM responses
+ollama:
+  model: mistral
+  api-url: http://localhost:8080/api/ollama  # Base URL for the Ollama API
+  timeout: 60000  # Timeout in milliseconds for API requests
+  max-retries: 3  # Number of retrie

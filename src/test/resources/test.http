@@ -1,0 +1,20 @@
+### Test /ask endpoint
+POST http://localhost:8080/api/ollama/ask
+Content-Type: application/x-www-form-urlencoded
+
+prompt=Hello, how are you?
+
+### Test /chat endpoint
+POST http://localhost:8080/api/ollama/chat
+Content-Type: application/json
+
+[
+  {
+    "role": "user",
+    "content": "Hi, can you help me?"
+  },
+  {
+    "role": "assistant",
+    "content": "Of course! What do you need help with?"
+  }
+]
